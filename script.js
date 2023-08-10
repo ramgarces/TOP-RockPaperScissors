@@ -41,26 +41,27 @@ function addPoints(playerScore, computerScore, playRound) {
     }
 }
 
-// function game() {
-//     let playerScore = 0;
-//     let computerScore = 0;
-//     for (i = 0; i < 5; i++) {
-//         let playerChoice = getPlayerChoice();
-//         let computerChoice = getComputerChoice();
-//         console.log(playRound(playerChoice, computerChoice));
-//     }
-// }
+function game() {
+    let playerScore = 0;
+    let computerScore = 0;
+    for (i = 0; i < 5; i++) {
+        let playerChoice = getPlayerChoice();
+        let computerChoice = getComputerChoice();
+        let roundResult = playRound(playerChoice, computerChoice); // just added not sure on this
+        
+    }
+}
 
-// game();
+game();
 
 
 
-let playerChoice = getPlayerChoice()
-let computerChoice = getComputerChoice()
+// let playerChoice = getPlayerChoice()
+// let computerChoice = getComputerChoice()
 
-let playerScore = 0;
-let computerScore = 0;
-console.log(addPoints(playerScore, computerScore, playRound(playerChoice, computerChoice)))
+// let playerScore = 0;
+// let computerScore = 0;
+// console.log(addPoints(playerScore, computerScore, playRound(playerChoice, computerChoice)))
 // console.log("Player choice: " + playerChoice)
 // console.log("Computer choice: " + computerChoice)
 // console.log(playRound(playerChoice, computerChoice))

@@ -10,7 +10,8 @@ function getComputerChoice() {
 }
 
 function getPlayerChoice() {
-    let playerChoice = prompt('Choose "Rock", "Paper", or "Scissors" (no quotes):').toLowerCase();
+    let playerChoice = 
+        prompt('Choose "Rock", "Paper", or "Scissors":').toLowerCase();
     return playerChoice;
 }
 
@@ -59,14 +60,3 @@ function game() {
 }
 
 game();
-
-
-
-// let playerChoice = getPlayerChoice()
-// let computerChoice = getComputerChoice()
-
-
-// console.log(addPoints(playerScore, computerScore, playRound(playerChoice, computerChoice)))
-// console.log("Player choice: " + playerChoice)
-// console.log("Computer choice: " + computerChoice)
-// console.log(playRound(playerChoice, computerChoice))

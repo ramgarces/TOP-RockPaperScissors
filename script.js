@@ -32,14 +32,6 @@ function playRound(playerChoice, computerChoice) {
     }
 }
 
-function addPoints(playerScore, computerScore, playRound) {
-    let roundResult = playRound;
-    if (playRound.slice(0, 3) == "You") {
-        playerScore++;
-    } else if (playRound.slice(0, 3) == "Com") {
-        computerScore++;
-    }
-}
 
 function game() {
     let playerScore = 0;
@@ -47,8 +39,16 @@ function game() {
     for (i = 0; i < 5; i++) {
         let playerChoice = getPlayerChoice();
         let computerChoice = getComputerChoice();
-        let roundResult = playRound(playerChoice, computerChoice); // just added not sure on this
-        
+        let result = playRound(playerChoice, computerChoice).slice(0,3);
+        if (result == "You") {
+            playerScore++;
+        } else if (result == "Com") {
+            computerScore++;
+        }
+        console.log("Player Choice :" + playerChoice);
+        console.log("Computer Choice: " + computerChoice);
+        console.log("Player Score: " + playerScore);
+        console.log("Computer Score: " + computerScore);
     }
 }
 
@@ -59,8 +59,7 @@ game();
 // let playerChoice = getPlayerChoice()
 // let computerChoice = getComputerChoice()
 
-// let playerScore = 0;
-// let computerScore = 0;
+
 // console.log(addPoints(playerScore, computerScore, playRound(playerChoice, computerChoice)))
 // console.log("Player choice: " + playerChoice)
 // console.log("Computer choice: " + computerChoice)

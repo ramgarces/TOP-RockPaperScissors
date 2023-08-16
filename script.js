@@ -11,15 +11,15 @@ const scissorsBtn = document.querySelector(".scissorsBtn");
 let results = document.querySelector(".results");
 
 rockBtn.addEventListener("click", function () {
-    console.log(playRound("rock", getComputerChoice()));
+    playRound("rock", getComputerChoice());
 });
 
 paperBtn.addEventListener("click", function () {
-    console.log(playRound("paper", getComputerChoice()));
+    playRound("paper", getComputerChoice());
 });
 
 scissorsBtn.addEventListener("click", function () {
-    console.log(playRound("scissors", getComputerChoice()));
+    playRound("scissors", getComputerChoice());
 });
 
 // Functions

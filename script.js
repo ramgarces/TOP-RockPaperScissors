@@ -1,4 +1,7 @@
-let computerChoice = getComputerChoice();
+
+
+let playerScore = 0;
+let computerScore = 0;
 
 //HTML Elements//
 
@@ -9,18 +12,6 @@ const scissorsBtn = document.querySelector(".scissorsBtn");
 
 //text//
 let results = document.querySelector(".results");
-
-rockBtn.addEventListener("click", function () {
-    playRound("rock", getComputerChoice());
-});
-
-paperBtn.addEventListener("click", function () {
-    playRound("paper", getComputerChoice());
-});
-
-scissorsBtn.addEventListener("click", function () {
-    playRound("scissors", getComputerChoice());
-});
 
 // Functions
 function getComputerChoice() {
@@ -36,7 +27,6 @@ function getComputerChoice() {
 
 function playRound(playerChoice, computerChoice) {
     if (playerChoice == 'rock' && computerChoice == 'paper') {
-        // return "Computer wins. Paper beats Rock.";
         results.innerHTML = "Computer wins. Paper beats scissors."
     } else if (playerChoice == 'rock' && computerChoice == 'scissors') {
         results.innerHTML = "You win! Rock beats Scissors.";
@@ -52,6 +42,22 @@ function playRound(playerChoice, computerChoice) {
         results.innerHTML = "Tie!"
     }
 }
+
+function game() {
+    rockBtn.addEventListener("click", function () {
+        playRound("rock", getComputerChoice());
+    });
+    
+    paperBtn.addEventListener("click", function () {
+        playRound("paper", getComputerChoice());
+    });
+    
+    scissorsBtn.addEventListener("click", function () {
+        playRound("scissors", getComputerChoice());
+    });
+}
+
+game();
 
 // function game() {
 //     let playerScore = 0;

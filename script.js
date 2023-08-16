@@ -9,22 +9,23 @@ function getComputerChoice() {
     }
 }
 
+let computerChoice = getComputerChoice();
+
 const rockBtn = document.querySelector(".rockBtn");
 const paperBtn = document.querySelector(".paperBtn");
 const scissorsBtn = document.querySelector(".scissorsBtn");
 
-function getPlayerChoice() {
-    
-    rockBtn.addEventListener("click", function() {
-        console.log("rock")
-    });
-    paperBtn.addEventListener("click", function() {
-        console.log("paper");
-    });
-    scissorsBtn.addEventListener("click", function() {
-        console.log("scissors")
-    });
-}
+rockBtn.addEventListener("click", function () {
+    console.log(playRound("rock", getComputerChoice()));
+});
+
+paperBtn.addEventListener("click", function () {
+    console.log(playRound("paper", getComputerChoice()));
+});
+
+scissorsBtn.addEventListener("click", function () {
+    console.log(playRound("scissors", getComputerChoice()));
+});
 
 function playRound(playerChoice, computerChoice) {
     if (playerChoice == 'rock' && computerChoice == 'paper') {
@@ -69,4 +70,4 @@ function playRound(playerChoice, computerChoice) {
 // }
 
 // game();
-getPlayerChoice();
+

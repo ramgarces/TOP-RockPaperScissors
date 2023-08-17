@@ -64,18 +64,25 @@ function getPlayerChoice(choice) {
 function playRound(playerChoice, computerChoice) {
     if (playerChoice == 'rock' && computerChoice == 'paper') {
         results.innerHTML = "Computer wins. Paper beats Rock."
+        results.style.color = "red";
     } else if (playerChoice == 'rock' && computerChoice == 'scissors') {
         results.innerHTML = "You win! Rock beats Scissors.";
+        results.style.color = "green";
     } else if (playerChoice == 'paper' && computerChoice == "scissors") {
         results.innerHTML = "Computer wins. Scissors beats Paper.";
+        results.style.color = "red";
     } else if (playerChoice == 'paper' && computerChoice == 'rock') {
         results.innerHTML = "You win! Paper beats Rock.";
+        results.style.color = "green";
     } else if (playerChoice == "scissors" && computerChoice == "rock") {
         results.innerHTML = "Computer wins. Rock beats Scissors";
+        results.style.color = "red";
     } else if (playerChoice == "scissors" && computerChoice == "paper") {
         results.innerHTML = "You win! Scissors beats Paper";
+        results.style.color = "green";
     } else {
         results.innerHTML = "Tie!"
+        results.style.color = "blue";
     }
 }
 

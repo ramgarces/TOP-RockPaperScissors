@@ -1,7 +1,6 @@
-
-
 let playerScore = 0;
 let computerScore = 0;
+let playerChoice = "";
 
 //HTML Elements//
 
@@ -42,22 +41,6 @@ function playRound(playerChoice, computerChoice) {
         results.innerHTML = "Tie!"
     }
 }
-
-function game() {
-    rockBtn.addEventListener("click", function () {
-        playRound("rock", getComputerChoice());
-    });
-    
-    paperBtn.addEventListener("click", function () {
-        playRound("paper", getComputerChoice());
-    });
-    
-    scissorsBtn.addEventListener("click", function () {
-        playRound("scissors", getComputerChoice());
-    });
-}
-
-game();
 
 // function game() {
 //     let playerScore = 0;

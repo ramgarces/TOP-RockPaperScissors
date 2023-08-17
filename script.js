@@ -48,7 +48,7 @@ function game(playerChoice, computerChoice, result) {
     displayChoices(playerChoice, computerChoice);
     updateScore(result);
     displayScore();
-    showWinner(playerScore, computerScore);
+    displayWinner(playerScore, computerScore);
 }
 
 // Functions
@@ -119,7 +119,7 @@ function displayScore() {
     computerScoreDisplay.innerHTML = computerScore;
 }
 
-function showWinner(playerScore, computerScore) {
+function displayWinner(playerScore, computerScore) {
     if (playerScore >= 5) {
         buttonContainer.style.display = "none";
         choicesContainer.style.display = "none";

@@ -27,7 +27,7 @@ rockBtn.addEventListener('click', function () {
 
     updateScore(result);
     displayScore();
-    checkScore(playerScore, computerScore);
+    showWinner(playerScore, computerScore);
 });
 const paperBtn = document.querySelector(".paperBtn");
 paperBtn.addEventListener('click', function () {
@@ -39,7 +39,7 @@ paperBtn.addEventListener('click', function () {
 
     updateScore(result);
     displayScore();
-    checkScore(playerScore, computerScore);
+    showWinner(playerScore, computerScore);
 });
 const scissorsBtn = document.querySelector(".scissorsBtn");
 scissorsBtn.addEventListener('click', function () {
@@ -51,7 +51,7 @@ scissorsBtn.addEventListener('click', function () {
 
     updateScore(result);
     displayScore();
-    checkScore(playerScore, computerScore);
+    showWinner(playerScore, computerScore);
 });
 
 // Functions
@@ -122,7 +122,7 @@ function displayScore() {
     computerScoreDisplay.innerHTML = computerScore;
 }
 
-function checkScore(playerScore, computerScore) {
+function showWinner(playerScore, computerScore) {
     if (playerScore >= 5) {
         buttonContainer.style.display = "none";
         choicesContainer.style.display = "none";

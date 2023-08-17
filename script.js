@@ -23,11 +23,7 @@ rockBtn.addEventListener('click', function () {
     let playerChoice = getPlayerChoice("rock");
     let result = playRound(playerChoice, computerChoice);
 
-    displayChoices(playerChoice, computerChoice);
-
-    updateScore(result);
-    displayScore();
-    showWinner(playerScore, computerScore);
+    game(playerChoice, computerChoice, result);
 });
 const paperBtn = document.querySelector(".paperBtn");
 paperBtn.addEventListener('click', function () {
@@ -35,11 +31,7 @@ paperBtn.addEventListener('click', function () {
     let playerChoice = getPlayerChoice("paper");
     let result = playRound(playerChoice, computerChoice);
 
-    displayChoices(playerChoice, computerChoice);
-
-    updateScore(result);
-    displayScore();
-    showWinner(playerScore, computerScore);
+    game(playerChoice, computerChoice, result);
 });
 const scissorsBtn = document.querySelector(".scissorsBtn");
 scissorsBtn.addEventListener('click', function () {
@@ -47,12 +39,15 @@ scissorsBtn.addEventListener('click', function () {
     let playerChoice = getPlayerChoice("scissors");
     let result = playRound(playerChoice, computerChoice);
 
-    displayChoices(playerChoice, computerChoice);
+    game(playerChoice, computerChoice, result);
+});
 
+function game(playerChoice, computerChoice, result) {
+    displayChoices(playerChoice, computerChoice);
     updateScore(result);
     displayScore();
     showWinner(playerScore, computerScore);
-});
+}
 
 // Functions
 function getComputerChoice() {
@@ -126,11 +121,11 @@ function showWinner(playerScore, computerScore) {
     if (playerScore >= 5) {
         buttonContainer.style.display = "none";
         choicesContainer.style.display = "none";
-        resultsContainer.innerHTML = "You win!"
+        results.innerHTML = "You win!"
     } else if (computerScore >= 5) {
         buttonContainer.style.display = "none";
         choicesContainer.style.display = "none";
-        resultsContainer.innerHTML = "Computer wins..."
+        results.innerHTML = "Computer wins..."
     }
 }
 

@@ -133,29 +133,3 @@ function checkScore(playerScore, computerScore) {
     }
 }
 
-// function game() {
-//     let playerScore = 0;
-//     let computerScore = 0;
-//     let playerChoice = getPlayerChoice();
-//     let computerChoice = getComputerChoice();
-//     let result = playRound(playerChoice, computerChoice).slice(0,3);
-//     if (result == "You") {
-//         playerScore++;
-//     } else if (result == "Com") {
-//         computerScore++;
-//     }
-//     console.log("Player Choice :" + playerChoice);
-//     console.log("Computer Choice: " + computerChoice);
-//     console.log("Player Score: " + playerScore);
-//     console.log("Computer Score: " + computerScore);
-//     if (playerScore > computerScore) {
-//         console.log("You beat the computer!")
-//     } else if (playerScore < computerScore) {
-//         console.log("The computer beat you...")
-//     } else {
-//         console.log("It's a tie in the end.")
-//     }
-// }
-
-// game();
-

@@ -25,9 +25,9 @@ rockBtn.addEventListener('click', function () {
 
     displayChoices(playerChoice, computerChoice);
 
-    
     updateScore(result);
     displayScore();
+    checkScore(playerScore, computerScore);
 });
 const paperBtn = document.querySelector(".paperBtn");
 paperBtn.addEventListener('click', function () {
@@ -39,6 +39,7 @@ paperBtn.addEventListener('click', function () {
 
     updateScore(result);
     displayScore();
+    checkScore(playerScore, computerScore);
 });
 const scissorsBtn = document.querySelector(".scissorsBtn");
 scissorsBtn.addEventListener('click', function () {
@@ -50,6 +51,7 @@ scissorsBtn.addEventListener('click', function () {
 
     updateScore(result);
     displayScore();
+    checkScore(playerScore, computerScore);
 });
 
 // Functions
@@ -117,6 +119,18 @@ function displayChoices(playerChoice, computerChoice) {
 function displayScore() {
     playerScoreDisplay.innerHTML = playerScore;
     computerScoreDisplay.innerHTML = computerScore;
+}
+
+function checkScore(playerScore, computerScore) {
+    if (playerScore >= 5) {
+        buttonContainer.style.display = "none";
+        choicesContainer.style.display = "none";
+        resultsContainer.innerHTML = "You win!"
+    } else if (computerScore >= 5) {
+        buttonContainer.style.display = "none";
+        choicesContainer.style.display = "none";
+        resultsContainer.innerHTML = "Computer wins..."
+    }
 }
 
 // function game() {

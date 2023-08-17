@@ -3,8 +3,14 @@ let computerScore = 0;
 
 //text//
 const results = document.querySelector(".results");
+
 const playerChoiceDisplay = document.querySelector(".player-choice");
 const computerChoiceDisplay = document.querySelector(".computer-choice");
+
+const playerScoreDisplay = document.querySelector(".player-score");
+const computerScoreDisplay = document.querySelector(".computer-score");
+playerScoreDisplay.innerHTML = playerScore; // to display 0 first
+computerScoreDisplay.innerHTML = computerScore; // to display 0 first
 
 //buttons//
 const rockBtn = document.querySelector(".rockBtn");
@@ -12,39 +18,33 @@ rockBtn.addEventListener('click', function () {
     let computerChoice = getComputerChoice();
     let playerChoice = getPlayerChoice("rock");
 
-    playerChoiceDisplay.innerHTML = 
-    playerChoice.slice(0,1).toUpperCase() + playerChoice.slice(1,);
-    computerChoiceDisplay.innerHTML = 
-    computerChoice.slice(0,1).toUpperCase() + computerChoice.slice(1,);
+    displayChoices(playerChoice, computerChoice);
 
     let result = playRound(playerChoice, computerChoice);
     updateScore(result);
+    displayScore();
 });
 const paperBtn = document.querySelector(".paperBtn");
 paperBtn.addEventListener('click', function () {
     let computerChoice = getComputerChoice();
     let playerChoice = getPlayerChoice("paper");
 
-    playerChoiceDisplay.innerHTML = 
-    playerChoice.slice(0,1).toUpperCase() + playerChoice.slice(1,);
-    computerChoiceDisplay.innerHTML = 
-    computerChoice.slice(0,1).toUpperCase() + computerChoice.slice(1,);
+    displayChoices(playerChoice, computerChoice);
 
     let result = playRound(playerChoice, computerChoice);
     updateScore(result);
+    displayScore();
 });
 const scissorsBtn = document.querySelector(".scissorsBtn");
 scissorsBtn.addEventListener('click', function () {
     let computerChoice = getComputerChoice();
     let playerChoice = getPlayerChoice("scissors");
 
-    playerChoiceDisplay.innerHTML = 
-    playerChoice.slice(0,1).toUpperCase() + playerChoice.slice(1,);
-    computerChoiceDisplay.innerHTML = 
-    computerChoice.slice(0,1).toUpperCase() + computerChoice.slice(1,);
+    displayChoices(playerChoice, computerChoice);
 
     let result = playRound(playerChoice, computerChoice);
     updateScore(result);
+    displayScore();
 });
 
 // Functions
@@ -100,8 +100,18 @@ function updateScore(results) {
     } else if (results == 0) {
         computerScore++;
     }
-    console.log("Player Score: " + playerScore);
-    console.log("Computer Score: " + computerScore);
+}
+
+function displayChoices(playerChoice, computerChoice) {
+    playerChoiceDisplay.innerHTML = 
+    playerChoice.slice(0,1).toUpperCase() + playerChoice.slice(1,);
+    computerChoiceDisplay.innerHTML = 
+    computerChoice.slice(0,1).toUpperCase() + computerChoice.slice(1,);
+}
+
+function displayScore() {
+    playerScoreDisplay.innerHTML = playerScore;
+    computerScoreDisplay.innerHTML = computerScore;
 }
 
 // function game() {

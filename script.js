@@ -17,10 +17,11 @@ const rockBtn = document.querySelector(".rockBtn");
 rockBtn.addEventListener('click', function () {
     let computerChoice = getComputerChoice();
     let playerChoice = getPlayerChoice("rock");
+    let result = playRound(playerChoice, computerChoice);
 
     displayChoices(playerChoice, computerChoice);
 
-    let result = playRound(playerChoice, computerChoice);
+    
     updateScore(result);
     displayScore();
 });
@@ -28,10 +29,10 @@ const paperBtn = document.querySelector(".paperBtn");
 paperBtn.addEventListener('click', function () {
     let computerChoice = getComputerChoice();
     let playerChoice = getPlayerChoice("paper");
+    let result = playRound(playerChoice, computerChoice);
 
     displayChoices(playerChoice, computerChoice);
 
-    let result = playRound(playerChoice, computerChoice);
     updateScore(result);
     displayScore();
 });
@@ -39,10 +40,10 @@ const scissorsBtn = document.querySelector(".scissorsBtn");
 scissorsBtn.addEventListener('click', function () {
     let computerChoice = getComputerChoice();
     let playerChoice = getPlayerChoice("scissors");
+    let result = playRound(playerChoice, computerChoice);
 
     displayChoices(playerChoice, computerChoice);
 
-    let result = playRound(playerChoice, computerChoice);
     updateScore(result);
     displayScore();
 });

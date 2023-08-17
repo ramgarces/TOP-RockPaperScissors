@@ -1,7 +1,6 @@
 let playerScore = 0;
 let computerScore = 0;
 
-//text//
 const results = document.querySelector(".results");
 
 const playerChoiceDisplay = document.querySelector(".player-choice");
@@ -11,6 +10,11 @@ const playerScoreDisplay = document.querySelector(".player-score");
 const computerScoreDisplay = document.querySelector(".computer-score");
 playerScoreDisplay.innerHTML = playerScore; // to display 0 first
 computerScoreDisplay.innerHTML = computerScore; // to display 0 first
+
+const resultsContainer = document.querySelector(".results-container");
+const buttonContainer = document.querySelector(".button-container");
+const choicesContainer = document.querySelector(".choices-container");
+const scoreContainer = document.querySelector(".score-container");
 
 //buttons//
 const rockBtn = document.querySelector(".rockBtn");

@@ -16,7 +16,7 @@ const buttonContainer = document.querySelector(".button-container");
 const choicesContainer = document.querySelector(".choices-container");
 const scoreContainer = document.querySelector(".score-container");
 
-//buttons//
+//Buttons//
 const rockBtn = document.querySelector(".rockBtn");
 rockBtn.addEventListener('click', function () {
     let computerChoice = getComputerChoice();
@@ -25,6 +25,7 @@ rockBtn.addEventListener('click', function () {
 
     game(playerChoice, computerChoice, result);
 });
+
 const paperBtn = document.querySelector(".paperBtn");
 paperBtn.addEventListener('click', function () {
     let computerChoice = getComputerChoice();
@@ -33,6 +34,7 @@ paperBtn.addEventListener('click', function () {
 
     game(playerChoice, computerChoice, result);
 });
+
 const scissorsBtn = document.querySelector(".scissorsBtn");
 scissorsBtn.addEventListener('click', function () {
     let computerChoice = getComputerChoice();

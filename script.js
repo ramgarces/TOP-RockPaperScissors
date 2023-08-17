@@ -17,8 +17,8 @@ rockBtn.addEventListener('click', function () {
     computerChoiceDisplay.innerHTML = 
     computerChoice.slice(0,1).toUpperCase() + computerChoice.slice(1,);
 
-    playRound(playerChoice, computerChoice);
-
+    let result = playRound(playerChoice, computerChoice);
+    updateScore(result);
 });
 const paperBtn = document.querySelector(".paperBtn");
 paperBtn.addEventListener('click', function () {
@@ -30,7 +30,8 @@ paperBtn.addEventListener('click', function () {
     computerChoiceDisplay.innerHTML = 
     computerChoice.slice(0,1).toUpperCase() + computerChoice.slice(1,);
 
-    playRound(playerChoice, computerChoice);
+    let result = playRound(playerChoice, computerChoice);
+    updateScore(result);
 });
 const scissorsBtn = document.querySelector(".scissorsBtn");
 scissorsBtn.addEventListener('click', function () {
@@ -42,7 +43,8 @@ scissorsBtn.addEventListener('click', function () {
     computerChoiceDisplay.innerHTML = 
     computerChoice.slice(0,1).toUpperCase() + computerChoice.slice(1,);
 
-    playRound(playerChoice, computerChoice);
+    let result = playRound(playerChoice, computerChoice);
+    updateScore(result);
 });
 
 // Functions
@@ -65,21 +67,27 @@ function playRound(playerChoice, computerChoice) {
     if (playerChoice == 'rock' && computerChoice == 'paper') {
         results.innerHTML = "Computer wins. Paper beats Rock."
         results.style.color = "red";
+        return 0;
     } else if (playerChoice == 'rock' && computerChoice == 'scissors') {
         results.innerHTML = "You win! Rock beats Scissors.";
         results.style.color = "green";
+        return 1;
     } else if (playerChoice == 'paper' && computerChoice == "scissors") {
         results.innerHTML = "Computer wins. Scissors beats Paper.";
         results.style.color = "red";
+        return 0;
     } else if (playerChoice == 'paper' && computerChoice == 'rock') {
         results.innerHTML = "You win! Paper beats Rock.";
         results.style.color = "green";
+        return 1;
     } else if (playerChoice == "scissors" && computerChoice == "rock") {
         results.innerHTML = "Computer wins. Rock beats Scissors";
         results.style.color = "red";
+        return 0;
     } else if (playerChoice == "scissors" && computerChoice == "paper") {
         results.innerHTML = "You win! Scissors beats Paper";
         results.style.color = "green";
+        return 1;
     } else {
         results.innerHTML = "Tie!"
         results.style.color = "blue";
@@ -87,15 +95,14 @@ function playRound(playerChoice, computerChoice) {
 }
 
 function updateScore(results) {
-    if (results == "player") {
+    if (results == 1) {
         playerScore++;
-    } else if (results == "computer") {
+    } else if (results == 0) {
         computerScore++;
     }
+    console.log("Player Score: " + playerScore);
+    console.log("Computer Score: " + computerScore);
 }
-
-console.log(`Player: ${playerScore}`);
-console.log(`Computer: ${computerScore}`);
 
 // function game() {
 //     let playerScore = 0;

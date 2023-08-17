@@ -19,16 +19,30 @@ rockBtn.addEventListener('click', function () {
 
     playRound(playerChoice, computerChoice);
 
-    console.log(`Computer chose: ${computerChoice}`);
-    console.log(`Player chose: ${playerChoice}`);
 });
 const paperBtn = document.querySelector(".paperBtn");
 paperBtn.addEventListener('click', function () {
-    playRound(getPlayerChoice("paper"), getComputerChoice());
+    let computerChoice = getComputerChoice();
+    let playerChoice = getPlayerChoice("paper");
+
+    playerChoiceDisplay.innerHTML = 
+    playerChoice.slice(0,1).toUpperCase() + playerChoice.slice(1,);
+    computerChoiceDisplay.innerHTML = 
+    computerChoice.slice(0,1).toUpperCase() + computerChoice.slice(1,);
+
+    playRound(playerChoice, computerChoice);
 });
 const scissorsBtn = document.querySelector(".scissorsBtn");
 scissorsBtn.addEventListener('click', function () {
-    playRound(getPlayerChoice("scissors"), getComputerChoice());
+    let computerChoice = getComputerChoice();
+    let playerChoice = getPlayerChoice("scissors");
+
+    playerChoiceDisplay.innerHTML = 
+    playerChoice.slice(0,1).toUpperCase() + playerChoice.slice(1,);
+    computerChoiceDisplay.innerHTML = 
+    computerChoice.slice(0,1).toUpperCase() + computerChoice.slice(1,);
+
+    playRound(playerChoice, computerChoice);
 });
 
 // Functions

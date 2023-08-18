@@ -44,6 +44,12 @@ scissorsBtn.addEventListener('click', function () {
     game(playerChoice, computerChoice, result);
 });
 
+const playagainBtn = document.querySelector(".playAgainBtn");
+scissorsBtn.addEventListener('click', function () {
+    
+});
+
+// Functions
 function game(playerChoice, computerChoice, result) {
     displayChoices(playerChoice, computerChoice);
     updateScore(result);
@@ -51,7 +57,6 @@ function game(playerChoice, computerChoice, result) {
     displayWinner(playerScore, computerScore);
 }
 
-// Functions
 function getComputerChoice() {
     let randNum = Math.floor(Math.random() * 3) + 1;
     if (randNum == 1) {
@@ -130,4 +135,3 @@ function displayWinner(playerScore, computerScore) {
         results.innerHTML = "Computer wins..."
     }
 }
-

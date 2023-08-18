@@ -41,6 +41,10 @@ body {
     color: rgb(240, 240, 240);
 }
 
+.playagain-button-container {
+    display: none;
+}
+
 .separator {
     width: 50%;
     height: 2px;

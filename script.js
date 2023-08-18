@@ -8,8 +8,8 @@ const computerChoiceDisplay = document.querySelector(".computer-choice");
 
 const playerScoreDisplay = document.querySelector(".player-score");
 const computerScoreDisplay = document.querySelector(".computer-score");
-// playerScoreDisplay.innerHTML = playerScore; // to display 0 first
-// computerScoreDisplay.innerHTML = computerScore; // to display 0 first
+playerScoreDisplay.innerHTML = playerScore; // to display 0 first
+computerScoreDisplay.innerHTML = computerScore; // to display 0 first
 
 const resultsContainer = document.querySelector(".results-container");
 const buttonContainer = document.querySelector(".button-container");
@@ -49,8 +49,9 @@ const playagainBtn = document.querySelector(".playAgainBtn");
 playagainBtn.addEventListener('click', function () {
     let computerChoice = "";
     let playerChoice = "";
+
     displayChoices(playerChoice, computerChoice);
-    playAgain(playerScore, computerScore);
+    playAgain();
 });
 
 // Functions
@@ -116,11 +117,6 @@ function updateScore(results) {
     }
 }
 
-function resetScore(results) {
-    playerScore = 0;
-    computerScore = 0;
-}
-
 function displayChoices(playerChoice, computerChoice) {
     playerChoiceDisplay.innerHTML = 
     playerChoice.slice(0,1).toUpperCase() + playerChoice.slice(1,);
@@ -147,9 +143,14 @@ function displayWinner(playerScore, computerScore) {
     }
 }
 
-function playAgain() {
+function playAgain() { //resets everything to default to begin a new game
     playerScore = 0;
     computerScore = 0;
+
+    playerScoreDisplay.innerHTML = 0;
+    computerScoreDisplay.innerHTML = 0;
+    results.innerHTML = "";
+
     buttonContainer.style.display = "flex";
     choicesContainer.style.display = "flex";
     playAgainContainer.style.display = "none";

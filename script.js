@@ -8,13 +8,14 @@ const computerChoiceDisplay = document.querySelector(".computer-choice");
 
 const playerScoreDisplay = document.querySelector(".player-score");
 const computerScoreDisplay = document.querySelector(".computer-score");
-playerScoreDisplay.innerHTML = playerScore; // to display 0 first
-computerScoreDisplay.innerHTML = computerScore; // to display 0 first
+// playerScoreDisplay.innerHTML = playerScore; // to display 0 first
+// computerScoreDisplay.innerHTML = computerScore; // to display 0 first
 
 const resultsContainer = document.querySelector(".results-container");
 const buttonContainer = document.querySelector(".button-container");
 const choicesContainer = document.querySelector(".choices-container");
 const scoreContainer = document.querySelector(".score-container");
+const playAgainContainer = document.querySelector(".playagain-button-container")
 
 //Buttons//
 const rockBtn = document.querySelector(".rockBtn");
@@ -45,8 +46,11 @@ scissorsBtn.addEventListener('click', function () {
 });
 
 const playagainBtn = document.querySelector(".playAgainBtn");
-scissorsBtn.addEventListener('click', function () {
-    
+playagainBtn.addEventListener('click', function () {
+    let computerChoice = "";
+    let playerChoice = "";
+    displayChoices(playerChoice, computerChoice);
+    playAgain(playerScore, computerScore);
 });
 
 // Functions
@@ -112,6 +116,11 @@ function updateScore(results) {
     }
 }
 
+function resetScore(results) {
+    playerScore = 0;
+    computerScore = 0;
+}
+
 function displayChoices(playerChoice, computerChoice) {
     playerChoiceDisplay.innerHTML = 
     playerChoice.slice(0,1).toUpperCase() + playerChoice.slice(1,);
@@ -128,10 +137,20 @@ function displayWinner(playerScore, computerScore) {
     if (playerScore >= 5) {
         buttonContainer.style.display = "none";
         choicesContainer.style.display = "none";
+        playAgainContainer.style.display = "flex";
         results.innerHTML = "You win!"
     } else if (computerScore >= 5) {
         buttonContainer.style.display = "none";
         choicesContainer.style.display = "none";
+        playAgainContainer.style.display = "flex";
         results.innerHTML = "Computer wins..."
     }
+}
+
+function playAgain() {
+    playerScore = 0;
+    computerScore = 0;
+    buttonContainer.style.display = "flex";
+    choicesContainer.style.display = "flex";
+    playAgainContainer.style.display = "none";
 }

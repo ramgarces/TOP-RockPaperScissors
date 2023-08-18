@@ -78,7 +78,7 @@ function getPlayerChoice(choice) {
 }
 
 function playRound(playerChoice, computerChoice) {
-    // 0 = computer win, 1 = player win for updateScore() function
+    //  return 0 for computer win or 1 for player win > updateScore() function
     if (playerChoice == 'rock' && computerChoice == 'paper') {
         results.innerHTML = "Computer wins. Paper beats Rock."
         results.style.color = "red";

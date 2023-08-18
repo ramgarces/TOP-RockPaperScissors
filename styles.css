@@ -40,6 +40,13 @@ body {
     color: rgb(240, 240, 240);
 }
 
+.separator {
+    width: 50%;
+    height: 2px;
+    border: none;
+    background-color: grey;
+}
+
 .choices-container {
     display: flex;
     gap: 5rem;
@@ -52,6 +59,11 @@ body {
     height: 2rem;
     width: auto;
     margin-top: 16px;
+}
+
+.computer-choice-box,
+.player-choice-box {
+    width: 20rem;
 }
 
 .score-container {

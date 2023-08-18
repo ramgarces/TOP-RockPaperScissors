@@ -20,3 +20,10 @@ body {
     align-items: center;
 }
 
+.results-container {
+    width: auto;
+    height: 5rem;
+    border: 2px solid red;
+    text-align: center;
+    font-size: 2rem;
+}

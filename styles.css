@@ -53,3 +53,17 @@ body {
     width: auto;
     margin-top: 16px;
 }
+
+.score-container {
+    display: flex;
+    gap: 5rem;
+    text-align: center;
+    font-size: 20px;
+}
+
+.computer-choice,
+.player-choice {
+    height: 2rem;
+    width: auto;
+    margin-top: 16px;
+}

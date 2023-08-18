@@ -39,6 +39,16 @@ body {
     border-radius: 0.5rem;
     background-color: rgb(0, 0, 139);
     color: rgb(240, 240, 240);
+    border: none;
+    transition: scale .3s ease-in-out, background-color .3s ease-in-out;
+}
+
+.button-container button:hover,
+.playagain-button-container button:hover {
+    background-color: rgb(0, 0, 200);
+    border: 2px solid white;
+    scale: 1.1;
+
 }
 
 .playagain-button-container {
@@ -75,7 +85,7 @@ body {
     display: flex;
     gap: 5rem;
     text-align: center;
-    font-size: 20px;
+    font-size: 42px;
 }
 
 .computer-choice,

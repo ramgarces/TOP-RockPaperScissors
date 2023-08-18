@@ -27,7 +27,8 @@ body {
     font-size: 2rem;
 }
 
-.button-container button {
+.button-container button,
+.playagain-button-container button {
     margin: 0 1rem;
     padding: 1rem;
     width: 10rem;
